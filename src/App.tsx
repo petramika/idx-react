@@ -25,7 +25,7 @@ const App = () => {
             </TabList>
           </Box>
           <TabPanel value="1"><ReactDiff /></TabPanel>
-          <TabPanel value="2"> <ReactDiffContinued /></TabPanel>
+          <TabPanel value="2"><ReactDiffContinued /></TabPanel>
           <TabPanel value="3"><EditorViewer /></TabPanel>
         </TabContext>
       </Box>)

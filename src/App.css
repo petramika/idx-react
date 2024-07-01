@@ -1,7 +1,0 @@
-.editor-viewer {
-  table tr:not(:first-child) td:nth-child(1) {
-    /* Selects the first <td> element in each row */
-    display: none;
-    /* Hides the selected elements */
-  }
-}
