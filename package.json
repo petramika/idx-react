@@ -15,11 +15,13 @@
     "@git-diff-view/react": "^0.0.14",
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.15.21",
+    "antd": "4.13.1",
     "diff2html": "^3.4.48",
     "dompurify": "^3.1.5",
     "highlight.js": "^11.9.0",
     "parse-git-diff": "^0.0.15",
     "prism-react-renderer": "^2.3.1",
+    "prism-themes": "1.5.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-code-differ": "^1.0.3",
@@ -28,9 +30,7 @@
     "react-dom": "^18.2.0",
     "reactivity-store": "^0.1.2",
     "refractor": "3.3.1",
-    "unidiff": "^1.0.4",
-    "antd": "4.13.1",
-    "prism-themes": "1.5.0"
+    "unidiff": "^1.0.4"
   },
   "devDependencies": {
     "@types/dompurify": "^3.0.5",

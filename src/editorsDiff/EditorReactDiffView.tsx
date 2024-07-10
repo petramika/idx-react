@@ -1,14 +1,16 @@
-import { Diff, Hunk, parseDiff, tokenize } from 'react-diff-view';
-//import DiffView from '../utils/Expansion';
+import { Diff, Hunk, getCollapsedLinesCountBetween, parseDiff, tokenize } from 'react-diff-view';
 import * as refractor from 'refractor';
-import { gitChangesFormat, rawFileSimulator } from '../utils/data';
+import { rawFileSimulator } from '../utils/data';
 import { useEffect, useMemo, useState } from 'react';
+import { diffLines, formatLines } from 'unidiff';
+// import these in the project
 import 'prism-themes/themes/prism-vs.css';
 import 'react-diff-view/style/index.css';
+import { Link } from '@mui/material';
 
 const EMPTY_HUNKS: never[] = [];
 
-const ReactDiffView = () => {
+const EditorReactDiffView = () => {
     const [{ type, hunks }, setDiff] = useState('');
 
     const tokens = useMemo(() => {
@@ -29,20 +31,21 @@ const ReactDiffView = () => {
     }, [hunks]);
 
     useEffect(() => {
-        const [diff] = parseDiff(gitChangesFormat, { nearbySequences: 'zip' });
+        const diffText = formatLines(diffLines(rawFileSimulator, "", { newlineIsToken: true }), { context: 3 });
+        const [diff] = parseDiff(diffText, { nearbySequences: 'zip' });
+        console.log(getCollapsedLinesCountBetween(diffText[10], diffText[20]))
         setDiff(diff);
     }, [])
 
 
     return (
         <div>
+            <span> For this: <Link href='https://github.com/otakustay/react-diff-view?tab=readme-ov-file#customize-styles' target="_blank" rel="noopener">customize props </Link></span>
             <Diff
                 viewType="unified"
                 diffType={type}
                 hunks={hunks || EMPTY_HUNKS}
                 tokens={tokens}
-                //oldSource={rawFileSimulator}
-                //onExpandRange={() => console.log("HIII")}
             >
                 {(hunks) => hunks.map((hunk) => <Hunk key={hunk.content} hunk={hunk} />)}
             </Diff>
@@ -50,4 +53,4 @@ const ReactDiffView = () => {
     );
 }
 
-export default ReactDiffView
+export default EditorReactDiffView

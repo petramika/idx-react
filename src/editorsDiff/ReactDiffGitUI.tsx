@@ -2,7 +2,7 @@ import { useLayoutEffect } from "react";
 import 'diff2html/bundles/css/diff2html.min.css';
 import { ColorSchemeType } from "diff2html/lib/types";
 import 'diff2html/bundles/js/diff2html-ui.min.js'
-import { gitGhangesFormat } from "../utils/data";
+import { gitChangesFormat } from "../utils/data";
 
 const ReactDiffGitUI = () => {
     useLayoutEffect(() => {
@@ -12,7 +12,7 @@ const ReactDiffGitUI = () => {
 
     const diff2htmlUi = new Diff2HtmlUI(
         targetElement, 
-        gitGhangesFormat, {
+        gitChangesFormat, {
             drawFileList: false,
             matching: "none",
             outputFormat: "side-by-side",

@@ -3,14 +3,14 @@ import * as Diff2Html from "diff2html";
 import 'highlight.js/styles/github.css';
 import 'diff2html/bundles/css/diff2html.min.css';
 import { ColorSchemeType } from "diff2html/lib/types";
-import { gitGhangesFormat } from "../utils/data";
+import { gitChangesFormat } from "../utils/data";
 
 const ReactDiffGitAdvanced = () => {
   const inputRef = useRef();
 
   useEffect(() => {
     var diffHtml = Diff2Html.html(
-        gitGhangesFormat,
+        gitChangesFormat,
       {
         drawFileList: false,
         matching: "none",
