@@ -10429,8 +10429,7 @@ export const rawFileSimulator = `<?xml version="1.0" encoding="UTF-8"?>
 </FieldSet>
 `;
 
-export const prevRawFileSimulator = `
-<?xml version="1.0" encoding="UTF-8"?>
+export const prevRawFileSimulator = `<?xml version="1.0" encoding="UTF-8"?>
 <FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>pse__CreateProjectFromTemplateRRColumns</fullName>
     <availableFields>

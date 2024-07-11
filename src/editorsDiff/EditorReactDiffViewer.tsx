@@ -2,8 +2,7 @@ import ReactDiffViewer from "react-diff-viewer-continued";
 import { Box } from "@mui/material";
 import { Highlight, themes } from "prism-react-renderer";
 
-const oldCode = `
-const ReactDiffContinued = () => {
+const oldCode = `const ReactDiffContinued = () => {
   const highlightSyntax = (str: any) => (
     <pre
       style={{ display: "inline" }}
@@ -26,17 +25,6 @@ const ReactDiffContinued = () => {
   );
 }
 `;
-const newCode = ``;
-
-enum DiffMethod {
-  CHARS = "diffChars",
-  WORDS = "diffWords",
-  WORDS_WITH_SPACE = "diffWordsWithSpace",
-  LINES = "diffLines",
-  TRIMMED_LINES = "diffTrimmedLines",
-  SENTENCES = "diffSentences",
-  CSS = "diffCss"
-}
 
 const EditorReactDiffViewer = () => {
   const highlightSyntax = (str: any) => (
@@ -64,7 +52,7 @@ const EditorReactDiffViewer = () => {
       <ReactDiffViewer
         hideMarkers={true}
         leftTitle={"src/whatever/example.js"}
-        oldValue={oldCode}
+        oldValue={""}
         newValue={oldCode}
         splitView={false}
         disableWordDiff={true}
